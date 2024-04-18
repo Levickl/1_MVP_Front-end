@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>MVP CRUD</title>
+</head>
+<body>
+    <div class="box">
+        <div id="header">
+            <H1>Usuários🍃</H1>
+            <div id="btns">
+                <button id="delete" onclick="modalRemove()">Remover</button>
+                <button id="create" onclick="x=document.getElementById('createModal');
+                x.showModal();">Adicionar</button>
+            </div>
+        </div>
+        <table id="listUsers">
+            <tr>
+                <th class="custom-chackbox">
+                    <input id="todos" type="checkbox" onchange="checkAll(this)"/> 
+                    <label for="todos"></label>
+                </th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Genero</th>
+                <th>Ações</th>
+            </tr>
+        </table>
+    </div>
+    <dialog id="createModal">
+            <form onsubmit="adicionarUser(event)">
+                <h1>Informações gerais</h1>
+                <div id="infGerais">
+                    <div class="info-row">
+                        <div>
+                            <h3>Nome</h3>
+                            <input type="text" id="nome" name="txtNome" placeholder="Digite o nome.">
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <input type="email" id="email" name="txtEmail" placeholder="Digite o email.">
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div>
+                            <h3>Gênero</h3>
+                            <select name="gender" id="genero">
+                                <option value="" disabled selected>Selecione um gênero</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Feminino</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h3>Data de nascimento</h3>
+                            <input type="date" id="data" name="txtdata">
+                        </div>
+                        <div>
+                            <h3>Cpf:</h3>
+                            <input type="text" name="txtcpf" id="cpf" placeholder="Digite o cpf.">
+                        </div>
+                    </div>
+                </div>
+                <h1>Informações de contato</h1>
+                <div id="infContato">
+                    <h3>Celular</h3>
+                    <input type="number" name="txtnumero" id="numero" placeholder="Digite o numero">
+                </div>
+                <h1>Informações de controle</h1>
+                <div id="infControle">
+                    <h3>Senha</h3>
+                    <input type="text" name="txtsenha" id="senha" placeholder="Digite a senha">
+                </div>
+                <div class="buttons">
+                    <input type="reset" name="btncancel" id="cancel" value="Cancelar" onclick="btnCancel(this)">
+                    <input type="submit" name="btnsalvar" id="salvar" value="Salvar">
+                </div>
+            </form>
+    </dialog>
+    <dialog id="editModal" close>
+        <form onsubmit="salvarEdicao(event)">
+            <h1>Informações gerais</h1>
+                <div id="infGerais">
+                    <div class="info-row">
+                        <div>
+                            <h3>Nome</h3>
+                            <input type="text" id="nomeEdit" name="txtNome" placeholder="Digite o nome.">
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <input type="email" id="emailEdit" name="txtEmail" placeholder="Digite o email.">
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div>
+                            <h3>Gênero</h3>
+                            <select name="gender" id="generoEdit">
+                                <option value="" disabled selected>Selecione um gênero</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Feminino</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h3>Data de nascimento</h3>
+                            <input type="date" id="dataEdit" name="txtdata" value="">
+                        </div>
+                        <div>
+                            <h3>Cpf:</h3>
+                            <input type="text" name="txtcpf" id="cpfEdit" placeholder="Digite o cpf.">
+                        </div>
+                    </div>
+                </div>
+                <h1>Informações de contato</h1>
+                <div id="infContato">
+                    <h3>Celular</h3>
+                    <input type="number" name="txtnumero" id="numeroEdit" placeholder="Digite o numero">
+                </div>
+                <h1>Informações de controle</h1>
+                <div id="infControle">
+                    <h3>Senha</h3>
+                    <input type="text" name="txtsenha" id="senhaEdit" placeholder="Digite a senha">
+                    <input type="text" name="id" id="userId" style="display: none;">
+                </div>
+                <div class="buttons">
+                    <input type="reset" name="btncancel" id="cancel" value="Cancelar" onclick="btnCancel(this)">
+                    <input type="submit" name="btnsalvar" id="salvar" value="Salvar" onclick="salvarEdicao(event)">
+                </div>
+        </form>
+    </dialog>
+    <dialog id="deleteModal">
+        <p>Certeza que deseja deletar <span id="numSelectedText">0</span> usuario(s)?</p>
+        <div class="buttons">
+            <button id="cancel" onclick="btnCancel(this)">Cancelar</button>
+            <button id="salvar" onclick="deleteSelect()">Deletar</button>
+        </div>
+    </dialog>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

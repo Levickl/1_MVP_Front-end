@@ -1,0 +1,227 @@
+body{
+    background-color: #007A78;
+    padding: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1, h3{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+h3{
+    font-weight: bold;
+}
+.box{
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 45px;
+    display: flexbox;
+    align-items: center;
+    background-color: white;
+    width: 90%;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+#btns button{
+    cursor: pointer;    
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    height: 32px;
+    width: 180px;
+    transition: 0.2s;
+    outline: none;
+}
+#btns button:hover{
+    opacity: 0.5;
+}
+#create{
+    background-color: #007A78;
+}
+#delete{
+    background-color: #DE4343;
+}
+table{
+    border-radius: 13px;
+    padding: 25px;
+    border: 2px solid rgba(149, 149, 149, 0.25);
+    width: 100%;
+}
+
+.custom-chackbox input{
+    display: none;
+}
+.custom-chackbox input + label:before{
+    content: '';
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: white;
+    display: inline-flex;
+    border: 1px solid rgba(149, 149, 149, 0.6);
+    cursor: pointer;
+}
+.custom-chackbox input:checked + label:before{
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #007A78;
+}
+.custom-chackbox label {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+table td {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+table th {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-style: normal;
+    text-align: left; 
+    padding-bottom: 10px; 
+}
+table td {
+    padding-top: 10px; /* Espaçamento superior */
+    padding-bottom: 10px; /* Espaçamento inferior */
+}
+
+table tr {
+    box-shadow: inset 0px -2px 0px rgba(149, 149, 149, 0.25);
+}
+
+table button {
+    margin-left: 20px;
+    width: 19px;
+    height: 20px;
+    background-color: #7636FF;
+    border: none;
+    border-radius: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='20' viewBox='0 0 96 96' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect width='96' height='96' fill='url(%23pattern0)'/%3E%3Cdefs%3E%3Cpattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'%3E%3Cuse xlink:href='%23image0_44_8' transform='scale(0.0104167)'/%3E%3C/pattern%3E%3Cimage id='image0_44_8' width='96' height='96' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACE0lEQVR4nO3dTW7UYBCE4dqEs5BwQG+9RIKEoJwGOAbkICTZBelFIyyhiAAzHme66+t+1iO56ivP38pSa6211lprrR0JeAN8AL4BD8SbS4wKvAJugB/kM6vA4X8ht1mjWu58B7MG/czP+LFTYwTgGj9vNQrgllzmfV+nEQD3JKJfmaYy7wSS0e9cNUYgGT3NNv4IJKM/8409Asno+YzjjkAy+nvOMUcgGf0763gjkIz+n3esEUhG+2UeZwSS0f65xxiBZHRYdv8RSEaH5/cegWS0roPvCCSj9T08RyAZHdfFbwSS0fF9vEYgGW3TyWcEktF2vaZTXu+YoKlo227TKa+3NmQq2r7fdMrrrQmYil6m43TK6x0arjRFozhFozhFozhFozhFozhFozhFozhFozhFozhFozhFozhFcy+AeX77Apjnty+AeX77Apjnty+AeX77Apjnty+AeX77Apjn7z9i7neQu+jz7wGiUZyiUZyiUZyiUZyiUZyiuRfAPL99Aczz2xfAPL99Aczz2xfAPL99Aczz2xfAPL99Aczz9x8x9zvIXfT59wDRKE7RKE7RKE7RKE7RKE7RgDvq+p5hgN0D26r6mmGAK+p6l2GAC7PHWG3lEXitDICP1HOlLIAz4DN1fNp1VibLCNfLW3NUj8t3Xq7Df+Y74XL3CyHbM8ZWul+6vAfOo8+3tdZaa621Jns/Ae+pTrS7JBeyAAAAAElFTkSuQmCC'/%3E%3C/defs%3E%3C/svg%3E");
+    cursor: pointer;
+}
+
+#deleteModal{
+    width: 300px;
+    
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 25px;
+    border: none;
+    border-top: 0.6rem solid #e8ec00;
+    font-family: Nunito;
+}
+
+#editModal, #createModal{
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 25px;
+    display: flexbox;
+    width: 715px;
+    height: auto;
+    align-items: center;
+    background-color: white;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+dialog h1 {
+    color: #007A78;
+    font-weight: bold;
+}
+
+dialog h3 {
+    color: #5F5F5F;
+    font-weight: 600;
+    font-size: 24;
+}
+/* Estilos para as entradas de texto e seleção */
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"],
+form select {
+    width: 300px;
+    height: 25px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="date"]:focus,
+form select:focus{
+    outline: none;
+    border: 1px solid rgb(0, 193, 237);
+}
+#infGerais select {
+    width: 310px;
+    height: 36px;
+}
+
+#infContato input[type="number"]::-webkit-inner-spin-button,
+#infContato input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: end;
+}
+
+/* Estilos para os botões de cancelar e salvar */
+#cancel,
+#salvar {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 20px;
+    margin-right: 10px;
+    transition: 0.2s;
+    outline: none;
+}
+
+#cancel {
+    background-color: #E8E8E8;
+    color: #007A78;
+}
+
+#salvar {
+    background-color: #007A78;
+    color: white;
+}
+
+#cancel:hover,
+#salvar:hover {
+    opacity: 0.8;
+}
+
+/* Estilos para as linhas de informações */
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.info-row div {
+    margin-right: 20px;
+}
